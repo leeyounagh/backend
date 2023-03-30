@@ -16,9 +16,7 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "*",
-    credentials: true,
-    // optionsSuccessStatus: 200,
+    origin: "*", // 모든 출처 허용 옵션. true 를 써도 된다.
   })
 );
 app.use(cookieParser());
