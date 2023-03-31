@@ -10,6 +10,7 @@ const path = require("path");
 const { User } = require("./models/User");
 const { Contents } = require("./models/Contents");
 const { auth } = require("./middleware/auth");
+
 app.use("/static", express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
