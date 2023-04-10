@@ -1,36 +1,39 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-const ContentsSchema = mongoose.Schema({
+const ContentsSchema = mongoose.Schema(
+  {
     writer: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
     Communutytitle: {
-        type: String,
-        maxlength: 50
+      type: String,
+      maxlength: 50,
     },
     Communutydesc: {
-        type: String,
-        maxlength: 50
+      type: String,
+      maxlength: 50,
     },
-    
+
     images: {
-        type: Array,
-        default: []
+      type: Array,
+      default: [],
     },
     comment: {
-        type: Array,
-        default: []
+      type: Array,
+      default: [],
     },
     id: {
-        type: String,
-        maxlength: 50
+      type: String,
+      maxlength: 50,
     },
-})
+  },
+  {
+    timestamps: true,
+  }
+);
 
+const Contents = mongoose.model("Contents", ContentsSchema);
 
-const Contents =mongoose.model('Contents',ContentsSchema)
-
-module.exports ={Contents}
+module.exports = { Contents };
