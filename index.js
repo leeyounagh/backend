@@ -31,7 +31,6 @@ mongoose
 
 // 정적 파일 읽어오기
 app.use(express.static("uploads"));
-// app.use(express.static(path.join("server", "uploads")));
 
 app.get("/", (req, res) => res.send("helloworld"));
 
@@ -220,7 +219,6 @@ app.delete("/api/users/removefromschedule", auth, (req, res) => {
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/");
-    // cb(null, "server/uploads/");
   },
   filename: function (req, file, cb) {
     cb(null, `${Date.now()}_${file.originalname}`);
